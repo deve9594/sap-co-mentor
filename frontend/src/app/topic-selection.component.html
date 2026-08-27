@@ -1,0 +1,23 @@
+<div class="home">
+  <header class="branding">
+    <h1>SAP CO Mentor</h1>
+    <p class="subtitle">Learn SAP Controlling using your FI knowledge</p>
+  </header>
+
+  <div class="topics">
+    <div
+      *ngFor="let t of topics"
+      (click)="select(t)"
+      [class.selected]="selected === t"
+      class="topic-card"
+      role="button"
+      tabindex="0"
+      >
+      {{ t }}
+    </div>
+  </div>
+
+  <div class="actions">
+    <button class="start" (click)="onStartLearning()" [disabled]="!selected">Start Learning</button>
+  </div>
+</div>

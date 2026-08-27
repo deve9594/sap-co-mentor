@@ -7,13 +7,24 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddScoped<IAiService, GeminiAiService>();
+// Register AI service implementation. Prefer Gemini when configured; otherwise use a local mock for development.
+var geminiKey = builder.Configuration["Gemini:ApiKey"];
+if (!string.IsNullOrWhiteSpace(geminiKey))
+{
+    builder.Services.AddScoped<IAiService, GeminiAiService>();
+}
+else
+{
+    builder.Services.AddScoped<IAiService, MockAiService>();
+}
+
 // Application services
 builder.Services.AddScoped<CoMentorService>();
 
-//AI services
+// AI concrete services (registered for direct testing if needed)
 builder.Services.AddScoped<OpenAiService>();
 builder.Services.AddScoped<GeminiAiService>();
+
 
 // CORS
 builder.Services.AddCors(options =>
