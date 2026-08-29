@@ -4,8 +4,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
-import { TopicSelectionComponent } from './topic-selection.component';
-import { LessonComponent } from './lesson.component';
+import { TopicSelectionComponent } from './components/topic-selection/topic-selection.component';
+import { LessonComponent } from './components/lesson/lesson.component';
 
 @NgModule({
   declarations: [

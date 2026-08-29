@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { CoMentorResponse } from './co-mentor-response.model';
+import { CoMentorResponse } from '../../models/co-mentor-response.model';
 
 @Component({
   selector: 'app-lesson',

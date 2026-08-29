@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { CoMentorService } from './co-mentor.service';
-import { CoMentorResponse } from './co-mentor-response.model';
+import { CoMentorService } from './services/co-mentor.service';
+import { CoMentorResponse } from './models/co-mentor-response.model';
 
 @Component({
   selector: 'app-root',
