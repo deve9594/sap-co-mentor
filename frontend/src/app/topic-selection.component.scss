@@ -1,7 +1,10 @@
-:root{
-  --accent:#005b96;
-  --muted:#6b6b6b;
+/* Define CSS variables on the component host so they are available within scoped styles */
+:host {
+  --accent: #005b96;
+  --muted: #6b6b6b;
+  display: block;
 }
+
 .home{
   max-width:1000px;
   margin:2rem auto;
